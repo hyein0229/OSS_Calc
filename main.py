@@ -35,8 +35,8 @@ while True:
         while True:
             next_calculation = input("Let's do next calculation? (yes/no): ")
             result = opt.isContinued(next_calculation)
-            if result != None
-                if result == False:
+            if result != None:   
+                if result == False: 
                     continued = False
                 break
             else:   # yes/no가 아닌 다른 대답이 입력된 경우
