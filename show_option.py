@@ -6,20 +6,21 @@ def print_operation():
     print("4. Divide")
 
 def isContinued(str):
-    lower_str = string.lower(str)
+    lower_str = str.lower()
     if lower_str == "no":
-        reply = string.lower(input("Are you sure? (yes/no): ")
-        if reply == "yes":
+        reply = input("Are you sure? (yes/no): ")
+        lower_reply = reply.lower()
+        if lower_reply == "yes":
             return False
-        elif reply == "no":
+        elif lower_reply == "no":
             return True
         else:
-            reply = string.lower(input("Please answer yes or no. Let's do next calculation? (yes/no): ")
+            reply = input("Please answer yes or no. Let's do next calculation? (yes/no): ")
             return isContinued(reply)
     elif lower_str == "yes":
         return True
     else:
-        reply = string.lower(input("Please answer yes or no. Let's do next calculation? (yes/no): ")
+        reply = input("Please answer yes or no. Let's do next calculation? (yes/no): ")
         return isContinued(reply)
 
         
