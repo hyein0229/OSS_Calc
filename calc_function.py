@@ -11,5 +11,8 @@ def multiply(x, y):
 
 #Need to define divide function.
 def divide (x,y):
-    return x / y
+    try:
+        return x / y
+    except ZeroDivisionError:
+        print("Can't divide by zero")
 
