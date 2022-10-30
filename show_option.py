@@ -1,21 +1,17 @@
 def print_operation():
 
 def isContinued(str):
-    lower_str = string.lower(str)
+    lower_str = str.lower()
     if lower_str == "no":
-        reply = string.lower(input("Are you sure? (yes/no): ")
-        if reply == "yes":
+        str2 = input("Are you sure? (yes/no): ")  # re-check
+        lower_str2 = str2.lower()
+        if lower_str2 == "yes":
             return False
-        elif reply == "no":
+        elif lower_str2 == "no":
             return True
-        else:
-            reply = string.lower(input("Please answer yes or no. Let's do next calculation? (yes/no): ")
-            return isContinued(reply)
     elif lower_str == "yes":
         return True
-    else:
-        reply = string.lower(input("Please answer yes or no. Let's do next calculation? (yes/no): ")
-        return isContinued(reply)
+    return None
 
         
 
