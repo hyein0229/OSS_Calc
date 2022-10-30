@@ -14,5 +14,5 @@ def divide (x,y):
     try:
         return x / y
     except ZeroDivisionError:
-        print("0으로 나눌 수 없습니다.")
+        print("Can't divide by zero")
 
