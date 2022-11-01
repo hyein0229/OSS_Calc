@@ -5,18 +5,21 @@ def print_operation():
     print("3. Multiply")
     print("4. Divide")
 
+
 def isContinued(str):
-    lower_str = str.lower()
-    if lower_str == "no":
-        str2 = input("Are you sure? (yes/no): ")  # re-check
-        lower_str2 = str2.lower()
-        if lower_str2 == "yes":
-            return False
-        elif lower_str2 == "no":
+    
+    while True:
+        next_calculation = input("Let's do next calculation? (yes/no): ").lower()
+        if next_calculation == "no":
+            re = input("Are you sure? (yes/no): ").lower()  # re-check
+            if re == "yes":
+                return False
+            elif re == "no":
+                return True
+        elif next_calculation == "yes":
             return True
-    elif lower_str == "yes":
-        return True
-    return None
+        else:   # yes/no가 아닌 다른 대답이 입력된 경우
+            print("Please answer yes or no.")
 
         
 
