@@ -1,8 +1,8 @@
 # Program make a simple calculator
 
+import logging
 import calc_function as cf
 import show_option as opt
-import logging
 
 def set_file_logger(logger_name, file_name, level):
 
@@ -22,10 +22,9 @@ def set_file_logger(logger_name, file_name, level):
 
     return logger
 
-
+# make logger
 logger1 = set_file_logger("normal roution logger", "calc.log", 1)  # 정상 루틴 로거
 logger2 = set_file_logger("Abnormal roution logger", "error.log", 2)  # 비정상 루틴 로거
-
 console = logging.StreamHandler()
 logger1.addHandler(console)
 
@@ -41,27 +40,26 @@ while True:
         num2 = float(input("Enter second number: "))
 
         if choice == '1':
-            logger1.info(str(num1) + " + " + str(num2) +  " = " + str(cf.add(num1, num2)))
+            logger1.info('%.2f + %.2f = %.2f', num1, num2, cf.add(num1, num2))
 
         elif choice == '2':
-            logger1.info(str(num1) + " - " + str(num2) +  " = " + str(cf.subtract(num1, num2)))
+            logger1.info('%.2f - %.2f = %.2f', num1, num2, cf.subtract(num1, num2))
 
         elif choice == '3':
-            logger1.info(str(num1) +  " * " +  str(num2) +  " = " +  str(cf.multiply(num1, num2)))
+            logger1.info('%.2f * %.2f = %.2f', num1, num2, cf.multiply(num1, num2))
 
         elif choice == '4':
-                result = cf.divide(num1, num2)
-                if result == None:
-                    logger2.error("divide by zero error")
-                else:
-                    logger1.info(str(num1) +  " / " + str(num2) + " = " + str(result))
+            result = cf.divide(num1, num2)
+            if result is None:
+                logger2.error("divide by zero error")
+            else:
+                logger1.info('%.2f / %.2f = %.2f', num1, num2, result)
 
         # check if user wants another calculation
         # break the while loop if answer is no
-        if(opt.isContinued() == False):
+        if not opt.isContinued():
             break
 
     else:
         print("Invalid Input")
         logger2.error("Input is out of range(1,2,3,4)")
-
