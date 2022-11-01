@@ -6,7 +6,7 @@ def print_operation():
     print("4. Divide")
 
 
-def isContinued(str):
+def isContinued():
     
     while True:
         next_calculation = input("Let's do next calculation? (yes/no): ").lower()
