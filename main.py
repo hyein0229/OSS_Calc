@@ -58,20 +58,8 @@ while True:
 
         # check if user wants another calculation
         # break the while loop if answer is no
-
-        continued = True
-        while True:
-            next_calculation = input("Let's do next calculation? (yes/no): ")
-            result = opt.isContinued(next_calculation)
-            if result != None:   
-                if result == False: 
-                    continued = False
-                break
-            else:   # yes/no가 아닌 다른 대답이 입력된 경우
-                print("Please answer yes or no.")
-        if continued == False:
+        if(opt.isContinued() == False):
             break
-
 
     else:
         print("Invalid Input")
