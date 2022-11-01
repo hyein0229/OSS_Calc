@@ -18,11 +18,5 @@ def isContinued():
                 return True
         elif next_calculation == "yes":
             return True
-        else:   # yes/no가 아닌 다른 대답이 입력된 경우
-            print("Please answer yes or no.")
 
-        
-
-
-                
-
+        print("Please answer yes or no.") # yes/no 가 아닌 다른 것이 입력된 경우

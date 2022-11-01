@@ -10,7 +10,7 @@ def multiply(x, y):
     return x * y
 
 #Need to define divide function.
-def divide (x,y):
+def divide (x, y):
     try:
         return x / y
     except ZeroDivisionError:
